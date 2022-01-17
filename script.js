@@ -9,7 +9,7 @@ populateUI();
 let ticketPrice = +movieSelect.value;
 
 // Save selected movie index and price
-function setMovieData(movieIndex, moviePrice, paramOne) {
+function setMovieData(movieIndex, moviePrice) {
   localStorage.setItem('selectedMovieIndex', movieIndex);
   localStorage.setItem('selectedMoviePrice', moviePrice);
 }
@@ -25,7 +25,7 @@ function updateSelectedCount() {
   const selectedSeatsCount = selectedSeats.length;
 
   count.innerText = selectedSeatsCount;
-  total.innerText = selectedSeatsCount + ticketPrice;
+  total.innerText = selectedSeatsCount * ticketPrice;
   
   setMovieData(movieSelect.selectedIndex, movieSelect.value);
 }
